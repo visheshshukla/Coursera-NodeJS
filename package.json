@@ -1,16 +1,23 @@
 {
-  "name": "confusionserver",
-  "version": "0.0.0",
-  "private": true,
+  "name": "node-mongo",
+  "version": "1.0.0",
+  "description": "Node MongoDB Example",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/visheshshukla/Coursera-NodeJS.git"
+  },
+  "author": "Vishesh Shukla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/visheshshukla/Coursera-NodeJS/issues"
+  },
+  "homepage": "https://github.com/visheshshukla/Coursera-NodeJS#readme",
   "dependencies": {
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "express": "~4.16.0",
-    "http-errors": "~1.6.2",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.0"
+    "assert": "^1.4.1",
+    "mongodb": "^3.0.10"
   }
 }
