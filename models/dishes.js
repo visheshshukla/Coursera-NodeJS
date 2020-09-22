@@ -53,25 +53,10 @@ var commentSchema = new Schema({
         type: String,
         required: true
     },
-    author:  {
-        type: String,
-        required: true
+    author: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     }
-}, {
-    timestamps: true
-});
-
-var dishSchema = new Schema({
-    name: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    description: {
-        type: String,
-        required: true
-    },
-    comments:[commentSchema]
 }, {
     timestamps: true
 });
