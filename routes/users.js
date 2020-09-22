@@ -9,8 +9,17 @@ const User = require('../models/user')
 router.use(bodyParser.json());
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/', authenticate.verifyUser, authenticate.verifyAdmin, function (req, res, next) {
+  User.find({})
+      .then((err, users) => {
+          if (err) {
+              return next(err);
+          }
+          res.statusCode = 200;
+          res.setHeader('Content-Type', 'application/json');
+          res.json(users);
+      }, (err) => next(err))
+      .catch((err) => next(err));
 });
 
 router.post('/signup', (req, res, next) => {
