@@ -1,4 +1,4 @@
-# Coursera-NodeJS
+# Coursera NodeJS
 
 **This Repository Contains The Work Associated With Server-Side Development With NodeJS, Express and MongoDB Course.**
 
