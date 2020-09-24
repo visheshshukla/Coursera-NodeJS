@@ -15,6 +15,7 @@ var fs = require('fs');
  */
 
 var port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
 app.set('secPort',port+443);
 
 /**
@@ -36,7 +37,7 @@ secureServer.listen(app.get('secPort'), () => {
   console.log('Server listening on port ',app.get('secPort'));
 });
 secureServer.on('error', onError);
-secureServer.on('listening', onListening);
+secureServer.on('listening', onListening);  
 
 /**
  * Normalize a port into a number, string, or false.

@@ -7,6 +7,7 @@ var session = require('express-session');
 var FileStore = require('session-file-store')(session);
 var passport = require('passport');
 var authenticate = require('./authenticate');
+const uploadRouter = require('./routes/uploadRouter');
 
 const mongoose = require('mongoose');
 
@@ -58,6 +59,7 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use('/imageUpload',uploadRouter);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
